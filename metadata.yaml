@@ -1,5 +1,14 @@
 homepage: "https://cheq.ai/manage/"
 documentation: "https://help.ensighten.com/hc/en-us/articles/36258326811665-Implementation-with-Google-Tag-Manager"
 versions:
+  - sha: c4b786ef47422d60a345df70f9076303a13771cf
+    changeNotes: |-
+      Add "Send immediately" option to bypass event batching per event.
+      Fail the tag (gtmOnFailure) when the event name resolves empty at runtime, so the failure is visible in GTM preview.
+      Ensure the Bootstrapper.SST queue via createQueue instead of overwriting the Bootstrapper global.
+      Add unit test scenarios, gallery categories, and column headers on the data tables.
+      Add an "Event Data Object" field to send an object variable (e.g. an ecommerce object) as the event data, with Event Data rows taking precedence.
+      Keep a __timestamp supplied in the event data instead of always overwriting it.
+      Align the "Send immediately" and "Publish Path Override" labels and help text with CHEQ Manage.
   - sha: 6c961585400a452e122db7578fb10496dcc816e8
     changeNotes: Initial version
